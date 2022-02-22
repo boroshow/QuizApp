@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/mainTaskFragment">
+
+    <fragment
+        android:id="@+id/navigation_task"
+        android:name="com.example.quizapp.ui.task.TaskFragment"
+        tools:layout="@layout/fragment_task" />
+
+    <fragment
+        android:id="@+id/navigation_history"
+        android:name="com.example.quizapp.ui.history.HistoryFragment"
+        tools:layout="@layout/fragment_history" />
+
+    <fragment
+        android:id="@+id/navigation_settings"
+        android:name="com.example.quizapp.ui.settings.SettingsFragment"
+        tools:layout="@layout/fragment_settings" />
+    <fragment
+        android:id="@+id/mainTaskFragment"
+        android:name="com.example.quizapp.ui.task.main_task.MainTaskFragment"
+        android:label="fragment_main_task"
+        tools:layout="@layout/fragment_main_task" />
+</navigation>

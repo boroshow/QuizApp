@@ -1,5 +1,6 @@
 package com.example.quizapp.ui.task
 
+import android.annotation.SuppressLint
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -9,6 +10,11 @@ import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.NavController
+import androidx.navigation.findNavController
+import androidx.navigation.fragment.NavHostFragment
+import androidx.navigation.fragment.findNavController
+import com.example.quizapp.R
 import com.example.quizapp.databinding.FragmentTaskBinding
 
 class TaskFragment : Fragment() {
@@ -30,7 +36,16 @@ class TaskFragment : Fragment() {
         _binding = FragmentTaskBinding.inflate(inflater, container, false)
         val root: View = binding.root
         seekBar()
+        clickBtn()
+
         return root
+    }
+
+    @SuppressLint("ResourceType")
+    private fun clickBtn() {
+        binding.startBtn?.setOnClickListener { button ->
+            button.findNavController().navigate(R.layout.fragment_main_task)
+        }
     }
 
     private fun seekBar() {

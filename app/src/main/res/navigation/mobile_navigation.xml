@@ -3,12 +3,16 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/mobile_navigation"
-    app:startDestination="@+id/mainTaskFragment">
+    app:startDestination="@+id/navigation_task">
 
     <fragment
         android:id="@+id/navigation_task"
         android:name="com.example.quizapp.ui.task.TaskFragment"
-        tools:layout="@layout/fragment_task" />
+        tools:layout="@layout/fragment_task" >
+        <action
+            android:id="@+id/action_navigation_task_to_mainTaskFragment"
+            app:destination="@id/mainTaskFragment" />
+    </fragment>
 
     <fragment
         android:id="@+id/navigation_history"
@@ -24,4 +28,9 @@
         android:name="com.example.quizapp.ui.task.main_task.MainTaskFragment"
         android:label="fragment_main_task"
         tools:layout="@layout/fragment_main_task" />
+    <fragment
+        android:id="@+id/resultFragment"
+        android:name="com.example.quizapp.ui.task.ResultFragment"
+        android:label="fragment_result"
+        tools:layout="@layout/fragment_result" />
 </navigation>
